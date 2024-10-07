@@ -1,7 +1,20 @@
 package main
 
-import "github.com/LautaroCasti/go-interpreter/token"
+import (
+	"fmt"
+	"os"
+	"os/user"
+
+	"github.com/LautaroCasti/go-interpreter/repl"
+)
 
 func main() {
-	token.NewToken()
+	user, err := user.Current()
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("Hola %s, al lenguaje bostero.", user.Username)
+	fmt.Printf("Escriba sus comandos a continuacion")
+	repl.Start(os.Stdin, os.Stdout)
 }
