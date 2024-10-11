@@ -14,7 +14,7 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("Hola %s, al lenguaje bostero.", user.Username)
-	fmt.Printf("Escriba sus comandos a continuacion")
+	fmt.Printf("Hola %s, al lenguaje bostero.\n", user.Username)
+	fmt.Printf("Escriba sus comandos a continuacion\n")
 	repl.Start(os.Stdin, os.Stdout)
 }
